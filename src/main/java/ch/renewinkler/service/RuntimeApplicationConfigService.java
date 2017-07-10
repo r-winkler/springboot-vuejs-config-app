@@ -5,6 +5,8 @@ import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+
 @Log
 @Service
 public class RuntimeApplicationConfigService {
@@ -12,7 +14,7 @@ public class RuntimeApplicationConfigService {
     @Autowired
     ConfigurationService configurationService;
 
-    public RuntimeApplicationConfiguration get() {
+    public RuntimeApplicationConfiguration get() throws IOException {
         return configurationService.getConfig().getRuntimeApplicationConfiguration();
     }
 

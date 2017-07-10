@@ -6,6 +6,8 @@ import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+
 @Log
 @Service
 public class DatabaseConfigService {
@@ -13,14 +15,14 @@ public class DatabaseConfigService {
     @Autowired
     ConfigurationService configurationService;
 
-    public DatabaseConfiguration getDatabaseConfiguration() {
+    public DatabaseConfiguration getDatabaseConfiguration() throws IOException {
         return configurationService.getConfig().getDatabaseConfiguration();
     }
 
-    public void update(DatabaseConfiguration databaseConfiguration) {
+    public void update(DatabaseConfiguration databaseConfiguration) throws IOException {
         RuntimeConfiguration config = configurationService.getConfig();
         config.setDatabaseConfiguration(databaseConfiguration);
-        //configurationService.writeConfig(config);
+        configurationService.writeConfig(config);
     }
 
 }

@@ -5,6 +5,8 @@ import ch.renewinkler.service.ModuleConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/config/module")
 public class ModuleConfigController {
@@ -13,7 +15,7 @@ public class ModuleConfigController {
     ModuleConfigService moduleConfigService;
 
     @GetMapping
-    public ModuleConfiguration get() {
+    public ModuleConfiguration get() throws IOException {
         return moduleConfigService.get();
     }
 

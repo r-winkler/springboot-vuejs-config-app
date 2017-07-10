@@ -5,6 +5,8 @@ import ch.renewinkler.service.RuntimeApplicationConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/config/application")
 public class RuntimeApplicationConfigController {
@@ -13,7 +15,7 @@ public class RuntimeApplicationConfigController {
     RuntimeApplicationConfigService runtimeApplicationConfigService;
 
     @GetMapping
-    public RuntimeApplicationConfiguration get() {
+    public RuntimeApplicationConfiguration get() throws IOException {
         return runtimeApplicationConfigService.get();
     }
 
