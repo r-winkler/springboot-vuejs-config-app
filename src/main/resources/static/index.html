@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="well container">
+
+    <h1>Configuration</h1>
+
+    <div class="panel panel-default panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Runtime Application Configuration</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Http Caching
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputMaxAgeCaching" class="col-sm-2 control-label">Max age caching</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputMaxAgeCaching" placeholder="Max age caching">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSessionTimeout" class="col-sm-2 control-label">Session timeout</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputSessionTimeout"
+                               placeholder="Session timeout">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="panel panel-default panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Network Configuration</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputFrontendPort" class="col-sm-2 control-label">Frontend port</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputFrontendPort" placeholder="Frontend port">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFrontendHost" class="col-sm-2 control-label">Frontend host</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputFrontendHost" placeholder="Frontend host">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="panel panel-default panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Database Configuration</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputType" class="col-sm-2 control-label">Type</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputType" placeholder="Database type">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUrl" class="col-sm-2 control-label">Url</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputUrl" placeholder="Url">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPort" class="col-sm-2 control-label">Port</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputPort" placeholder="Port">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputUsername" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="panel panel-default panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Module Configuration</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Devices
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Dashboard
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
