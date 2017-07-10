@@ -1,0 +1,22 @@
+{
+    "runtime_application_configuration" : {
+      "network_configuration" : {
+        "frontend_port" : 8081,
+        "frontend_host" : "0.0.0.0"
+      },
+      "http_caching" : true,
+      "max_age_caching" : 900,
+      "session_timeout" : 300000
+    },
+  "database_configuration" : {
+    "type" : "MSSQL",
+    "url" : "localhost",
+    "port": "1433",
+    "username" : "sa",
+    "password" : "mysecretpassword"
+  },
+  "module_configuration" : {
+    "device" : true,
+    "dashboard" : true
+  }
+}
