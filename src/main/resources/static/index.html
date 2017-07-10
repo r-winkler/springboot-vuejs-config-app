@@ -23,30 +23,32 @@
 
     <h1>Configuration</h1>
 
-    <div class="panel panel-default panel-primary">
+    <div id="runtimeApplication" class="panel panel-default panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Runtime Application Configuration</h3>
         </div>
         <div class="panel-body">
             <form class="form-horizontal">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Http Caching
-                        </label>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="inputMaxAgeCaching" class="col-sm-2 control-label">Max age caching</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputMaxAgeCaching" placeholder="Max age caching">
+                        <input type="number" v-model="runtimeApplicationConfiguration.max_age_caching"
+                               class="form-control" id="inputMaxAgeCaching" placeholder="Max age caching">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputSessionTimeout" class="col-sm-2 control-label">Session timeout</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputSessionTimeout"
+                        <input type="number" v-model="runtimeApplicationConfiguration.session_timeout"
+                               class="form-control" id="inputSessionTimeout"
                                placeholder="Session timeout">
+                    </div>
+                </div>
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" v-model="runtimeApplicationConfiguration.http_caching"> Http Caching
+                        </label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -58,7 +60,7 @@
         </div>
     </div>
 
-    <div class="panel panel-default panel-primary">
+    <div id="network" class="panel panel-default panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Network Configuration</h3>
         </div>
@@ -67,13 +69,15 @@
                 <div class="form-group">
                     <label for="inputFrontendPort" class="col-sm-2 control-label">Frontend port</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputFrontendPort" placeholder="Frontend port">
+                        <input type="number" v-model="networkConfiguration.frontend_port" class="form-control"
+                               id="inputFrontendPort" placeholder="Frontend port">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputFrontendHost" class="col-sm-2 control-label">Frontend host</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputFrontendHost" placeholder="Frontend host">
+                        <input type="text" v-model="networkConfiguration.frontend_host" class="form-control"
+                               id="inputFrontendHost" placeholder="Frontend host">
                     </div>
                 </div>
                 <div class="form-group">
@@ -135,7 +139,7 @@
         </div>
     </div>
 
-    <div class="panel panel-default panel-primary">
+    <div id="module" class="panel panel-default panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Module Configuration</h3>
         </div>
@@ -145,14 +149,14 @@
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Devices
+                                <input type="checkbox" v-model="moduleConfiguration.device"> Device
                             </label>
                         </div>
                     </div>
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> Dashboard
+                                <input type="checkbox" v-model="moduleConfiguration.dashboard"> Dashboard
                             </label>
                         </div>
                     </div>
@@ -169,6 +173,6 @@
 
 </div>
 
-<script src="index.js"></script>
+<script src="index.es6"></script>
 </body>
 </html>

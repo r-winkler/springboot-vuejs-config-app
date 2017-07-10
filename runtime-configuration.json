@@ -1,6 +1,6 @@
 {
   "runtime_application_configuration": {
-    "http_caching": true,
+    "http_caching": false,
     "max_age_caching": 900,
     "session_timeout": 300000,
     "network_configuration": {
@@ -9,7 +9,7 @@
     }
   },
   "database_configuration": {
-    "type": "Postgre",
+    "type": "Postgres",
     "url": "localhost",
     "port": 1433,
     "username": "sa",
@@ -17,6 +17,6 @@
   },
   "module_configuration": {
     "device": true,
-    "dashboard": true
+    "dashboard": false
   }
 }
