@@ -21,7 +21,7 @@ public class RuntimeApplicationConfigController {
 
     @PutMapping
     public @ResponseBody
-    String update(@RequestBody RuntimeApplicationConfiguration runtimeApplicationConfiguration) {
+    String update(@RequestBody RuntimeApplicationConfiguration runtimeApplicationConfiguration) throws IOException {
         runtimeApplicationConfigService.update(runtimeApplicationConfiguration);
         return "ok";
     }

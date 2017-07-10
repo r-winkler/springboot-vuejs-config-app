@@ -12,8 +12,8 @@ public class ObjectMapperConfig {
     @Bean("objectMapper")
     public ObjectMapper getObjectMapper() {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        mapper.enable(SerializationFeature.INDENT_OUTPUT); // pretty print
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
+                .enable(SerializationFeature.INDENT_OUTPUT); // pretty print
         return mapper;
     }
 }

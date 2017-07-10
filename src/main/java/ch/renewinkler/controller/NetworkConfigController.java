@@ -21,7 +21,7 @@ public class NetworkConfigController {
 
     @PutMapping
     public @ResponseBody
-    String update(@RequestBody NetworkConfiguration networkConfiguration) {
+    String update(@RequestBody NetworkConfiguration networkConfiguration) throws IOException {
         networkConfigService.update(networkConfiguration);
         return "ok";
     }

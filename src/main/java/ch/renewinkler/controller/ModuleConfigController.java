@@ -21,7 +21,7 @@ public class ModuleConfigController {
 
     @PutMapping
     public @ResponseBody
-    String update(@RequestBody ModuleConfiguration moduleConfiguration) {
+    String update(@RequestBody ModuleConfiguration moduleConfiguration) throws IOException {
         moduleConfigService.update(moduleConfiguration);
         return "ok";
     }
