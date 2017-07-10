@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ConfigurationService {
 
     private File file = new File("runtime-configuration.json");
-    
+
     @Autowired
     ObjectMapper objectMapper;
 

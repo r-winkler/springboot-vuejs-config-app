@@ -1,6 +1,7 @@
 package ch.renewinkler.service;
 
 import ch.renewinkler.model.NetworkConfiguration;
+import ch.renewinkler.model.RuntimeConfiguration;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,10 @@ public class NetworkConfigService {
         return configurationService.getConfig().getRuntimeApplicationConfiguration().getNetworkConfiguration();
     }
 
-    public void update(NetworkConfiguration networkConfiguration) {
+    public void update(NetworkConfiguration networkConfiguration) throws IOException {
+        RuntimeConfiguration config = configurationService.getConfig();
+        config.getRuntimeApplicationConfiguration().setNetworkConfiguration(networkConfiguration);
+        configurationService.writeConfig(config);
     }
 
 }

@@ -1,6 +1,7 @@
 package ch.renewinkler.service;
 
 import ch.renewinkler.model.ModuleConfiguration;
+import ch.renewinkler.model.RuntimeConfiguration;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,10 @@ public class ModuleConfigService {
         return configurationService.getConfig().getModuleConfiguration();
     }
 
-    public void update(ModuleConfiguration moduleConfiguration) {
+    public void update(ModuleConfiguration moduleConfiguration) throws IOException {
+        RuntimeConfiguration config = configurationService.getConfig();
+        config.setModuleConfiguration(moduleConfiguration);
+        configurationService.writeConfig(config);
     }
 
 }
