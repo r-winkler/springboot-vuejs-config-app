@@ -12,6 +12,17 @@ let databaseConfig = new Vue({
                 .catch(error => {
                     console.log(error);
                 })
+        },
+    methods: {
+        saveDatabaseConfig: function (event) {
+            axios.put('/config/database', this.databaseConfiguration)
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
         }
     }
 )
@@ -30,6 +41,17 @@ let networkConfig = new Vue({
                 .catch(error => {
                     console.log(error);
                 })
+        },
+    methods: {
+        saveNetworkConfig: function (event) {
+            axios.put('/config/network', this.networkConfiguration)
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
         }
     }
 )
@@ -48,6 +70,17 @@ let moduleConfig = new Vue({
                 .catch(error => {
                     console.log(error);
                 })
+        },
+    methods: {
+        saveModuleConfig: function (event) {
+            axios.put('/config/module', this.moduleConfiguration)
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
         }
     }
 )
@@ -66,7 +99,19 @@ let runtimeApplicationConfig = new Vue({
                 .catch(error => {
                     console.log(error);
                 })
+        },
+    methods: {
+        saveRuntimeApplicationConfig: function (event) {
+            axios.put('/config/application', this.runtimeApplicationConfiguration)
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         }
+    }
+
     }
 )
 

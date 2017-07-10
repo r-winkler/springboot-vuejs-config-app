@@ -1,15 +1,15 @@
 {
   "runtime_application_configuration": {
-    "http_caching": false,
-    "max_age_caching": 900,
+    "http_caching": true,
+    "max_age_caching": 800,
     "session_timeout": 300000,
     "network_configuration": {
-      "frontend_port": 8081,
-      "frontend_host": "0.0.0.0"
+      "frontend_port": 8080,
+      "frontend_host": "0.0.0.1"
     }
   },
   "database_configuration": {
-    "type": "Postgres",
+    "type": "Postg",
     "url": "localhost",
     "port": 1433,
     "username": "sa",
@@ -17,6 +17,6 @@
   },
   "module_configuration": {
     "device": true,
-    "dashboard": false
+    "dashboard": true
   }
 }
