@@ -1,6 +1,7 @@
 package ch.renewinkler.service;
 
-import ch.renewinkler.model.*;
+import ch.renewinkler.model.RuntimeApplicationConfiguration;
+import ch.renewinkler.model.RuntimeConfiguration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.io.IOException;
 
 @Log
 @Service
-public class ConfigurationService {
+public class RuntimeApplicationConfigService {
 
     @Value(value = "classpath:runtime-configuration.json")
     private Resource runtimeConfigurationFile;
@@ -20,20 +21,11 @@ public class ConfigurationService {
     @Autowired
     ObjectMapper objectMapper;
 
-    public DatabaseConfiguration getDatabaseConfiguration() {
-        return getRuntimeConfiguration().getDatabaseConfiguration();
-    }
-
-    public ModuleConfiguration getModuleConfiguration() {
-        return getRuntimeConfiguration().getModuleConfiguration();
-    }
-
-    public RuntimeApplicationConfiguration getApplicationConfiguration() {
+    public RuntimeApplicationConfiguration get() {
         return getRuntimeConfiguration().getRuntimeApplicationConfiguration();
     }
 
-    public NetworkConfiguration getNetworkConfiguration() {
-        return getRuntimeConfiguration().getRuntimeApplicationConfiguration().getNetworkConfiguration();
+    public void update(RuntimeApplicationConfiguration runtimeApplicationConfiguration) {
     }
 
     private RuntimeConfiguration getRuntimeConfiguration() {
