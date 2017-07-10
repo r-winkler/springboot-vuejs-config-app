@@ -7,4 +7,5 @@ public class NetworkConfiguration {
 
     private int frontendPort;
     private String frontendHost;
+
 }

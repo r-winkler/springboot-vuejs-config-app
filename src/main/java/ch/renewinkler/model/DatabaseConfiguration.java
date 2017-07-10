@@ -10,4 +10,5 @@ public class DatabaseConfiguration {
     private Integer port;
     private String username;
     private String password;
+
 }
